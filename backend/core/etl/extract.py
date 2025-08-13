@@ -4,7 +4,6 @@ from typing import Optional
 from core.config import settings
 import logging
 
-# Configuration du logging
 logger = logging.getLogger(__name__)
 
 
