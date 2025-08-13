@@ -10,13 +10,13 @@ import os
 
 from db.base import Base
 from deps import get_db
-from backend.api.v1.router import api_v1
+from api.v1.router import api_v1
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
 
 def start_application():
     app = FastAPI()
-    app.include_router(api_v1, prefix="/api/v1/")
+    app.include_router(api_v1, prefix="/api/v1")
     return app
 
 
@@ -68,3 +68,21 @@ def client(
     app.dependency_overrides[get_db] = _get_test_db
     with TestClient(app) as client:
         yield client
+
+
+@pytest.fixture
+def sample_commune():
+    return {
+        "nom_commune_complet": "PARIS",
+        "code_postal": "75001",
+        "departement": "75"
+    }
+
+
+@pytest.fixture
+def another_commune():
+    return {
+        "nom_commune_complet": "LYON",
+        "code_postal": "69001",
+        "departement": "69"
+    }

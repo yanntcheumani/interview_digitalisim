@@ -3,19 +3,19 @@ from fastapi.testclient import TestClient
 
 
 def test_create_commune(sample_commune, client):
-    response = client.post("/communes", json=sample_commune)
+    response = client.post("/api/v1/commune/", json=sample_commune)
     assert response.status_code == 200
     assert response.json()["nom_commune_complet"] == "PARIS"
 
 def test_create_another_commune(another_commune, client):
-    response = client.post("/communes", json=another_commune)
+    response = client.post("/api/v1/commune/", json=another_commune)
     assert response.status_code == 200
     assert response.json()["nom_commune_complet"] == "LYON"
 
 def test_update_commune(sample_commune, client):
     updated = sample_commune.copy()
     updated["code_postal"] = "75001"
-    response = client.post("/communes", json=updated)
+    response = client.post("/api/v1/commune/", json=updated)
     assert response.status_code == 200
     assert response.json()["code_postal"] == "75001"
 
