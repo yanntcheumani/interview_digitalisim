@@ -29,7 +29,7 @@ class Commune(Base):
 
     def __repr__(self):
         """Représentation string du modèle pour le debug"""
-        return f"<Commune(nom='{self.nom_commune_complet}', postal_code='{self.postal_code}', dept='{self.departement}')>"
+        return f"<Commune(nom='{self.commune_name}', postal_code='{self.postal_code}', dept='{self.departement}')>"
 
     @staticmethod
     def calculate_departement(postal_code: str) -> str:

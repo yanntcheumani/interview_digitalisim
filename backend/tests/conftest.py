@@ -73,8 +73,8 @@ def client(
 @pytest.fixture
 def sample_commune():
     return {
-        "nom_commune_complet": "PARIS",
-        "code_postal": "75001",
+        "name": "PARIS",
+        "postalCode": "75001",
         "departement": "75"
     }
 
@@ -82,7 +82,7 @@ def sample_commune():
 @pytest.fixture
 def another_commune():
     return {
-        "nom_commune_complet": "LYON",
-        "code_postal": "69001",
+        "name": "LYON",
+        "postalCode": "69001",
         "departement": "69"
     }

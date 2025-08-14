@@ -70,28 +70,3 @@ class DataExtractor:
         except Exception as e:
             logger.error(f"Erreur lors de l'extraction du DataFrame : {e}")
             return None
-    
-    def extract_from_file(self, file_path: str) -> Optional[pd.DataFrame]:
-        """
-        Extract data from a local CSV file (for testing purposes)
-        
-        Args:
-            file_path: Path to the local CSV file
-            
-        Returns:
-            pandas DataFrame or None in case of error
-        """
-        try:
-            df = pd.read_csv(
-                file_path,
-                encoding='utf-8',
-                sep=',',
-                dtype={'code_postal': str}
-            )
-            
-            logger.info(f"DataFrame extrait du fichier local : {len(df)} lignes")
-            return df
-            
-        except Exception as e:
-            logger.error(f"Erreur lors de la lecture du fichier {file_path} : {e}")
-            return None
