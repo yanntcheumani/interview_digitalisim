@@ -29,7 +29,7 @@ def create_or_update_commune(
             commune_data.departement = Commune.calculate_departement(commune_data.postalCode)
         
         commune = create_commune(db, commune_data)
-        
+
         logger.info(f"Commune créée/mise à jour : {commune.commune_name}")
         return commune
 
@@ -53,9 +53,9 @@ def api_get_commune_by_name(
     db: Session = Depends(get_db)
 ) -> CommuneOut:
     """
-    Récupère les informations d'une commune par son nom
+    Retrieves information about a municipality by name.
     
-    - **nom_commune**: Nom de la commune à rechercher (insensible à la casse)
+    - **municipality_name**: Name of the municipality to search for (case-insensitive).
     """
     commune = get_commune_by_name(db, nom_commune)
     

@@ -22,7 +22,7 @@ class DataExtractor:
     def download_csv(self, timeout: int = 30) -> Optional[str]:
         """
         Download the CSV file from the URL.
-        
+
         Args:
             timeout: Timeout in seconds for the request.
             

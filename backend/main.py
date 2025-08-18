@@ -57,5 +57,3 @@ def setup_villa():
     etl.run_full_pipeline()
 
 setup_villa()
-
-    

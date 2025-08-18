@@ -58,7 +58,7 @@ class DataTransformer:
         
         # Filtrage des codes postaux valides (5 chiffres)
         cleaned_df = cleaned_df[cleaned_df['code_postal'].str.match(r'^\d{5}$')]
-        
+
         # Nettoyage et mise en majuscules des noms de communes
         cleaned_df['nom_commune_complet'] = (
             cleaned_df['nom_commune_complet']

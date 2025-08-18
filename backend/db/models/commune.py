@@ -59,7 +59,7 @@ class Commune(Base):
             else:
                 return "2B"
         
-        # DOM-TOM (Guadeloupe, Martinique, Guyane, Réunion, Mayotte, etc.)
+        # DOM-TOM (Guadeloupe, Martinique, Guyane, etc.)
         if postal_code.startswith(("97", "98")):
             return postal_code[:3]
         

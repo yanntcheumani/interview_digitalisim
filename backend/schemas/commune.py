@@ -18,11 +18,11 @@ class CommuneCreate(CommuneBase):
         if not v.isdigit():
             raise ValueError('Le code postal doit contenir uniquement des chiffres')
         return v
-    
+
     @field_validator('name')
     def validate_name(cls, v):
         return v.strip().upper()
-    
+
 class CommuneUpdate(CommuneBase):
     code_postal: Optional[str] = Field(None, min_length=5, max_length=5)
     nom_commune_complet: Optional[str] = Field(None, min_length=1, max_length=255)
